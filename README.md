@@ -12,6 +12,26 @@ https://www.youtube.com/watch?v=zZfhAXfBvVA&list=RDCMUCnnQ3ybuyFdzvgv2Ky5jnAA&in
 
 Install Jenkins, configure Docker as agent, set up cicd, deploy applications to k8s and much more.
 
+## Table of Contents
+
+- [Repository Structure](#repository-structure)
+- [AWS EC2 Instance](#aws-ec2-instance)
+- [Install Jenkins](#install-jenkins)
+- [Install the Docker Pipeline plugin](#install-the-docker-pipeline-plugin-in-jenkins)
+- [Docker Slave Configuration](#docker-slave-configuration)
+- [Interview Questions](#interview-questions)
+
+## Repository Structure
+
+| Directory / File | Description |
+| --- | --- |
+| `my-first-pipeline` | A simple first Jenkins pipeline to get started |
+| `multi-stage-multi-agent` | Pipeline using multiple stages with different Docker agents |
+| `java-maven-sonar-argocd-helm-k8s` | Java app CI/CD with Maven, SonarQube, ArgoCD, Helm and Kubernetes |
+| `python-jenkins-argocd-k8s` | Python app CI/CD with Jenkins, ArgoCD and Kubernetes |
+| `shared-libraries`, `vars` | Jenkins shared library examples |
+| `Interview_Questions.md` | Jenkins interview questions |
+
 ## AWS EC2 Instance
 
 - Go to AWS Console
@@ -52,7 +72,7 @@ sudo apt-get update
 sudo apt-get install jenkins
 ```
 
-**Note: ** By default, Jenkins will not be accessible to the external world due to the inbound traffic restriction by AWS. Open port 8080 in the inbound traffic rules as show below.
+**Note:** By default, Jenkins will not be accessible to the external world due to the inbound traffic restriction by AWS. Open port 8080 in the inbound traffic rules as shown below.
 
 - EC2 > Instances > Click on <Instance-ID>
 - In the bottom tabs -> Click on Security
@@ -88,7 +108,7 @@ Create First Admin User or Skip the step [If you want to use this Jenkins instan
 
 <img width="990" alt="Screenshot 2023-02-01 at 11 02 09 AM" src="https://user-images.githubusercontent.com/43399466/215959757-403246c8-e739-4103-9265-6bdab418013e.png">
 
-Jenkins Installation is Successful. You can now starting using the Jenkins 
+Jenkins Installation is Successful. You can now start using the Jenkins 
 
 <img width="990" alt="Screenshot 2023-02-01 at 11 14 13 AM" src="https://user-images.githubusercontent.com/43399466/215961440-3f13f82b-61a2-4117-88bc-0da265a67fa7.png">
 
@@ -114,7 +134,7 @@ sudo apt update
 sudo apt install docker.io
 ```
  
-### Grant Jenkins user and Ubuntu user permission to docker deamon.
+### Grant Jenkins user and Ubuntu user permission to docker daemon.
 
 ```
 sudo su - 
@@ -131,6 +151,14 @@ http://<ec2-instance-public-ip>:8080/restart
 
 The docker agent configuration is now successful.
 
+## Interview Questions
 
+See [Interview_Questions.md](Interview_Questions.md) for a list of Jenkins interview questions.
 
+## Contributing
 
+Contributions are welcome. Please read the [Code of Conduct](CODE_OF_CONDUCT.md) before opening an issue or pull request.
+
+## License
+
+This project is licensed under the terms of the [LICENSE](LICENSE) file.
